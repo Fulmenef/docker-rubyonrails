@@ -2,6 +2,8 @@ FROM ruby:latest
 
 MAINTAINER Axel PERROUD <axel.perroud@outlook.com>
 
+ARG app_home
+
 RUN apt-get update -qq && apt-get install -y build-essential
 
 # for postgres
@@ -19,9 +21,7 @@ RUN apt-get install -y nodejs
 # Install Rails and Bundler
 RUN gem install rails bundler
 
-# Find a way to use docker-env or something better
-ENV APP_HOME /var/www/html
-WORKDIR $APP_HOME
+WORKDIR $app_home
 
 # Only if you are using existing project
 #RUN bundle install
