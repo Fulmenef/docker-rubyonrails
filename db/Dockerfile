@@ -1,4 +1,4 @@
-FROM percona:latest
+FROM mysql:5.7
 
 MAINTAINER Axel PERROUD <axel.perroud@outlook.com>
 LABEL maintainer="Axel PERROUD <axel.perroud@outlook.com>"
