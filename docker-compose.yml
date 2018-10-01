@@ -11,9 +11,11 @@ services:
     env_file: docker-env
     #command: bin/rails server --port 3000 --binding 0.0.0.0    # For server container only
     ports:
-      - "3000:3000"   # To change for port 80 ?
+      - "80:3000"   # To change for port 80 ?
     volumes:
       - "~/Documents/www/ruby/ror:/var/www/html:delegated"  #Second path must be the same as app_home args
+    links:
+      - db
     tty: true
 
   db:
